@@ -1,14 +1,14 @@
 apiVersion: v1
 entries:
-  boundary:
+  boundary-softsci:
   - apiVersion: v2
     appVersion: 0.7.1
-    created: "2022-10-11T18:59:09.44925-04:00"
+    created: "2022-10-11T19:04:17.9658943-04:00"
     description: A Helm chart for HashiCorp Boundary
-    digest: aeb64d41128632033677669f2e285c6ab2990cb7add729bde2645546c047fbd9
-    name: boundary
+    digest: be5e95597c53be93c09f650f37c713696d52c0b31450b61358977f886c1deb33
+    name: boundary-softsci
     type: application
     urls:
-    - boundary/boundary-0.2.4.tgz
+    - boundary-softsci-0.2.4.tgz
     version: 0.2.4
-generated: "2022-10-11T18:59:09.4459238-04:00"
+generated: "2022-10-11T19:04:17.9618038-04:00"
