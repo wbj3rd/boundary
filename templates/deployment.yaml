@@ -82,7 +82,7 @@ spec:
             - /bin/sh
             - "-c"
           args:
-            - boundary server -config /boundary/boundary-config.hcl
+            - boundary server -config /boundary/boundary-admin-config.hcl
           env:
             - name: HOSTNAME
               value: boundary
