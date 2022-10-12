@@ -30,34 +30,24 @@ listener "tcp" {
   purpose     = "proxy"
   tls_disable = true
 }
-kms "transit" {
-  purpose         = "root"
-  address         = "{{ .Values.vault.fqdn }}"
-  disable_renewal = false
+ kms "aead" {
+ 	purpose = "root"
+ 	aead_type = "aes-gcm"
+ 	key = "sP1fnF5Xz85RrXyELHFeZg9Ad2qt4Z4bgNHVGtD6ung="
+ 	key_id = "global_root"
+ }
 
-  key_name   = "root"
-  mount_path = "local-kms/"
+ kms "aead" {
+ 	purpose = "worker-auth"
+ 	aead_type = "aes-gcm"
+ 	key = "8fZBjCUfN0TzjEGLQldGY4+iE9AkOvCfjh7+p0GtRBQ="
+ 	key_id = "global_worker-auth"
+ }
 
-  tls_skip_verify = true
-}
-kms "transit" {
-  purpose         = "recovery"
-  address         = "{{ .Values.vault.fqdn }}"
-  disable_renewal = false
-
-  key_name   = "recovery"
-  mount_path = "local-kms/"
-
-  tls_skip_verify = true
-}
-kms "transit" {
-  purpose         = "worker-auth"
-  address         = "{{ .Values.vault.fqdn }}"
-  disable_renewal = false
-
-  key_name   = "worker-auth"
-  mount_path = "local-kms/"
-
-  tls_skip_verify = true
-}
+ kms "aead" {
+ 	purpose = "recovery"
+ 	aead_type = "aes-gcm"
+ 	key = "8fZBjCUfN0TzjEGLQldGY4+iE9AkOvCfjh7+p0GtRBQ="
+ 	key_id = "global_recovery"
+ }
 
