@@ -41,8 +41,8 @@ vault:
   # Select whether or not to mount in an externally-created token for management of Vault
   managementToken:
     enabled: true
-    envName: token
-    secretName: vault-token-9ql9m
+    envName: VAULT_TOKEN
+    secretName: vault-token-dfh5d
   # Pull DB credentials from Vault
   database:
     enabled: true
@@ -64,7 +64,11 @@ serviceAccount:
 podAnnotations: { "consul.hashicorp.com/connect-inject": "false" }
 
 podSecrets:
+<<<<<<< HEAD
   - secretName: vault-token-v8wrg
+=======
+  - secretName: vault-token-crpgv
+>>>>>>> 36e00595063b7079e47da34a1816b9d9c9b1a09d
     keyName: token
 
 podSecurityContext: {}
