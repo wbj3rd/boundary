@@ -64,11 +64,7 @@ serviceAccount:
 podAnnotations: { "consul.hashicorp.com/connect-inject": "false" }
 
 podSecrets:
-<<<<<<< HEAD
-  - secretName: vault-token-v8wrg
-=======
   - secretName: vault-token-crpgv
->>>>>>> 36e00595063b7079e47da34a1816b9d9c9b1a09d
     keyName: token
 
 podSecurityContext: {}
